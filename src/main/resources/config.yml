@@ -1,0 +1,15 @@
+# The command prefix
+command-prefix: "!"
+
+# The bot token. Insert yours here!
+token: ""
+
+# The commands
+command:
+  assignRole:
+    keyword: "assignRole"
+    usage: "!assignRole <role>"
+
+# The allowed roles. Roles in this list will be assigned by the bot, and removed upon switching.
+allowed-roles:
+- "Test"
