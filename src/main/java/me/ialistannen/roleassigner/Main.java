@@ -11,12 +11,16 @@ import sx.blah.discord.util.RateLimitException;
  * The main class for the bot
  */
 public class Main {
-    
+
     private Main(String token) throws DiscordException, RateLimitException {
         IDiscordClient client = new ClientBuilder()
                 .withToken(token)
                 .build();
-        client.getDispatcher().registerListener(new CommandListener("!"));
+        client.getDispatcher().registerListener(
+                new CommandListener(
+                        ConfigManager.INSTANCE.getString("command-prefix")
+                )
+        );
         client.login();
     }
 
